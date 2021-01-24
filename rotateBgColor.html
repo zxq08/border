@@ -1,0 +1,67 @@
+<!-- zxq 2021-01-23 16:44 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border</title>
+    <style>
+        @keyframes rotate {
+            100% {
+                transform: rotate(1turn);
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            /* height: 100%; */
+        }
+        .border-box {
+            margin: 0 auto;
+            margin-top: 100px;
+            position: relative;
+            width: 200px;
+            height: 120px;
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 0;
+        }
+        .border-box::after {
+            content: '';
+            position: absolute;
+            z-index: 9;
+            top: -50%;
+            left: -50%;
+            /* right: -5px;
+            bottom: -5px; */
+            width: 200%;
+            height: 200%;
+            animation:  rotate 4s linear infinite;
+            background-repeat: no-repeat;
+            background-size: 50% 50%, 50% 50%;
+            background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+            background-image: linear-gradient(#399953, #399953),linear-gradient(#fbb300, #fbb300), linear-gradient(#d53e33, #d53e33), linear-gradient(#377af5, #377af5);
+        }
+        .border-box::before {
+            content: '';
+            position: absolute;
+            z-index: 99;
+            top: 4px;
+            left: 4px;
+            bottom: 4px;
+            right: 4px;
+            background: #fff;
+            border-radius: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <!-- four color bg demo -->
+    <div class="border-box">
+        four color bg<br>demo
+    </div>
+</body>
+</html>
