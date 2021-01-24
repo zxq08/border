@@ -1,0 +1,45 @@
+<!-- zxq 2021-01-23 16:44 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border</title>
+    <style>
+        @keyframes dashedMove {
+            100% {
+                background-position: 8px 0, -8px 100%, 0 -8px, 100% 8px;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+        }
+        .border-box {
+            margin: 0 auto;
+            margin-top: 20px;
+            padding: 5px;
+            width: 200px;
+            height: 160px;
+            background: linear-gradient(90deg, #0286c2 50%, transparent 0) repeat-x,
+            linear-gradient(90deg, #0286c2 50%, transparent 0) repeat-x,
+            linear-gradient(0deg, #0286c2 50%, transparent 0) repeat-y,
+            linear-gradient(0deg, #0286c2 50%, transparent 0) repeat-y;
+            background-size: 8px 1px, 8px 1px, 1px 8px, 1px 8px;
+            background-position: top left, bottom left, top left, top right;
+        }
+        .border-box:hover {
+            animation: dashedMove .3s infinite linear;
+        }
+    </style>
+</head>
+<body>
+    <!-- single demo -->
+    <div class="border-box">
+        dashed border<br> demo
+    </div>
+</body>
+</html>
